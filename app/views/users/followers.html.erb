@@ -9,6 +9,11 @@
       </tr>
     </thead>
     <tbody>
+      <% if @user.blank? %>
+        <tr>
+          <td>ユーザーはいません</td>
+        </tr>
+      <% else %>
       <% @users.each do |users| %>
         <tr>
           <td>
@@ -28,6 +33,7 @@
             <% end %>
           </td>
         </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>

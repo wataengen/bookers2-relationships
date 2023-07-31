@@ -1,4 +1,5 @@
 <h2>Follows</h2>
+
   <table class='table'>
     <thead>
       <tr>
@@ -9,7 +10,14 @@
       </tr>
     </thead>
     <tbody>
+      <% if @user.blank? %>
+        <tr>
+          <td>ユーザーはいません</td>
+        </tr>
+      <% else %>
+
       <% @users.each do |users| %>
+
         <tr>
           <td>
             <%= link_to user_path(users) do %>
@@ -29,5 +37,7 @@
           </td>
         </tr>
       <% end %>
+      <% end %>
+
     </tbody>
   </table>
